@@ -175,19 +175,19 @@ export default function Home({ articles }) {
           </h1>
           <p className="prose mt-6 dark:prose-invert">
             Hi, this is Leo. Thanks for visiting my blog. As an IT Admin
-            enthusiastic and professional, I've been working on the field for
+            enthusiastic and professional, I&apos;ve been working on the field for
             over 10 years for multiple European/Swiss companies of different
             sizes. My field expertise is Device Management, which is also my
             hobby .
           </p>
           <p className="prose mt-6 dark:prose-invert">
-            On this blog, I'll post things I find interesting on which I have
+            On this blog, I&apos;ll post things I find interesting on which I have
             worked on. You can also find me on different social networks or
             perhaps will meet me on different community events soon (if you do
             see me, say hi).
           </p>
           <p className="prose mt-6 dark:prose-invert">
-            Poke around and see what I'm up to. It's all open source, so feel
+            Poke around and see what I&apos;m up to. It&apos;s all open source, so feel
             free to contribute.
           </p>
           <div className="mt-6 flex gap-6">
