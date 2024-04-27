@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import clsx from 'clsx'
 import { FaGlobe, FaReddit } from 'react-icons/fa'
 
