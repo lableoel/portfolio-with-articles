@@ -29,7 +29,7 @@ export default function Uses() {
   return (
     <>
     <NextSeo
-      title="Uses - Brian Ketelsen"
+      title="leoel"
       description={siteMeta.description}
       canonical="https://brian.dev/uses"
       openGraph={{

@@ -3,7 +3,7 @@ import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
-import  siteMeta  from '@/data/siteMeta'
+import {siteMeta} from '@/data/siteMeta'
 
 function Article({ article }) {
   return (
@@ -42,7 +42,7 @@ export default function ArticlesIndex({ articles }) {
     <>
     <NextSeo
       title="Articles - Brian Ketelsen"
-      description={siteMeta.description}
+      description={siteMeta?.description}
       canonical="https://brian.dev/articles"
       openGraph={{
         url: 'https://brian.dev/articles',

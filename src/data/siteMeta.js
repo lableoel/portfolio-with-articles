@@ -1,11 +1,11 @@
-
-import logoAmazon from '@/images/logos/aws.svg'
 import logoClarity from '@/images/logos/clarity.jpg'
 import logoMicrosoft from '@/images/logos/azure.svg'
 import logoXOR from '@/images/logos/xor.jpg'
 import logoVanilla from '@/images/logos/vanilla.svg'
 import logoFleek from '@/images/logos/fleeksvg.svg'
 import logoUblue from '@/images/logos/ublue.png'
+import Arsim from "@/images/tech-images/Photo.jpg"
+import UserAvatar from "@/images/tech-images/useravatar.png"
 
 import logoGolang from '@/images/logos/icons8-golang.svg'
 import logoKubernetes from '@/images/logos/kubernetes.svg'
@@ -13,51 +13,49 @@ import logoCaptainhook from '@/images/logos/captainhook.svg'
 const siteMeta = {
     title: "Leutrim Olluri",
     description: "Leutrim Olluri is a developer advocate, keynote speaker, author, and open source practitioner.",
-    copyright: "Leutrim Olluri, Laussane",
+    copyright: "leoel",
     author: {
         name: "Leutrim Olluri",
         email: "lableoel@outlook.com",
-        twitter: "https://twitter.com/bketelsen",
+        twitter: "https://twitter.com/LABleoel",
         mastodon: "https://tty0.social/@bketelsen",
+        reddit: "https://www.reddit.com/u/PhiloAstroEng/s/7F8ZLYNol9",
         instagram: "https://instagram.com/bketelsen",
         github: "https://github.com/bketelsen",
-        linkedin: "https://linkedin.com/in/brianketelsen",
-        twitch: "https://twitch.tv/bketelsen",
+        linkedin: "https://www.linkedin.com/in/leutrim-o/",
+        twitch: "https://twitter.com/LABleoel",
         youtube: "https://youtube.com/@bketelsen",
     },
-    siteUrl: "https://lableoel.dev"
+    siteUrl: "https://lableoel.dev",
 }
+
  export const resume = [
     {
-      company: 'Amazon',
-      title: 'Principal Developer Advocate',
-      logo: logoAmazon,
-      start: '2022',
-      end: {
-        label: 'Present',
-        dateTime: new Date().getFullYear(),
-      },
-    },
-    {
-      company: 'Microsoft',
-      title: 'Principal Cloud Developer Advocate',
-      logo: logoMicrosoft,
+      company: 'Arsim Sejdiu',
+      title: 'Full-stack developer',
+      logo: Arsim,
+      twitter: "https://www.jabot.tech",
+      web: "https://www.jabot.tech",
       start: '2017',
       end: '2022',
     },
     {
-      company: 'XOR Data Exchange',
-      title: 'CIO',
-      logo: logoXOR,
-      start: '2014',
-      end: '2016',
+      company: 'Jabot',
+      title: 'Security Specialist',
+      logo: UserAvatar,
+      twitter: "https://www.jabot.tech",
+      web: "https://www.jabot.tech",
+      start: '2017',
+      end: '2022',
     },
     {
-      company: 'Clarity Services, Inc.',
-      title: 'COO',
-      logo: logoClarity,
-      start: '2008',
-      end: '2014',
+      company: 'RAAD',
+      title: 'Sysem Engineer',
+      logo: UserAvatar,
+      twitter: "https://www.jabot.tech",
+      web: "https://blog.raad.ch/",
+      start: '2017',
+      end: '2022',
     },
   ]
 export const projects = [
@@ -110,8 +108,6 @@ export const projects = [
     link: { href: 'https://go.dev', label: 'go.dev' },
     logo: logoGolang,
   },
-
-
 ]
 
 
