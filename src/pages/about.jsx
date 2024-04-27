@@ -1,6 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
-import clsx from 'clsx'
 import {FaReddit} from "react-icons/fa"
 
 import { Container } from '@/components/Container'
@@ -11,21 +9,7 @@ import {
 import leoel from '@/images/tech-images/leoel.png'
 import siteMeta from '@/data/siteMeta'
 import { NextSeo } from 'next-seo';
-
-
-function SocialLink({ className, href, children, icon: Icon }) {
-  return (
-    <li className={clsx(className, 'flex')}>
-      <Link
-        href={href}
-        className="flex text-sm font-medium transition group text-zinc-800 hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
-      >
-        <Icon className="flex-none w-6 h-6 transition fill-zinc-500 group-hover:fill-teal-500" />
-        <span className="ml-4">{children}</span>
-      </Link>
-    </li>
-  )
-}
+import { SocialLink } from '@/components/SocialLinks'
 
 export default function About() {
   return (
