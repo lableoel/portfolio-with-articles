@@ -1,5 +1,5 @@
 import { NextSeo } from 'next-seo';
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/router'
 
 import { Container } from '@/components/Container'
 import { formatDate } from '@/lib/formatDate'
