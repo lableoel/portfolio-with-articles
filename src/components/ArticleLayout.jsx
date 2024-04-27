@@ -1,22 +1,22 @@
 import { NextSeo } from 'next-seo';
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 
 import { Container } from '@/components/Container'
 import { formatDate } from '@/lib/formatDate'
 import { Prose } from '@/components/Prose'
 
-function ArrowLeftIcon(props) {
-  return (
-    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
-      <path
-        d="M7.25 11.25 3.75 8m0 0 3.5-3.25M3.75 8h8.5"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
-}
+// function ArrowLeftIcon(props) {
+//   return (
+//     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
+//       <path
+//         d="M7.25 11.25 3.75 8m0 0 3.5-3.25M3.75 8h8.5"
+//         strokeWidth="1.5"
+//         strokeLinecap="round"
+//         strokeLinejoin="round"
+//       />
+//     </svg>
+//   )
+// }
 
 export function ArticleLayout({
   children,
@@ -24,7 +24,7 @@ export function ArticleLayout({
   isRssFeed = false,
   previousPathname,
 }) {
-  let router = useRouter()
+  // let router = useRouter()
 
   if (isRssFeed) {
     return children
@@ -34,9 +34,10 @@ export function ArticleLayout({
     <NextSeo
       title={meta.title}
       description={meta.description}
-      canonical={`https://brian.dev${router.pathname}`}
+      // canonical={`https://brian.dev${router.pathname}`}
+      anonical={`https://brian.dev`}
       openGraph={{
-        url: `https://brian.dev${router.pathname}`,
+        url: `https://brian.dev`, //url={`https://brian.dev${router.pathname}`} 
         images: [
           {
             url: `https://og.brian.dev/api/og?title=${meta.title}&desc=${meta.description}`,
@@ -52,7 +53,7 @@ export function ArticleLayout({
       <Container className="mt-16 lg:mt-32">
         <div className="xl:relative">
           <div className="mx-auto max-w-2xl">
-            {previousPathname && (
+            {/* {previousPathname && (
               <button
                 type="button"
                 onClick={() => router.back()}
@@ -61,7 +62,7 @@ export function ArticleLayout({
               >
                 <ArrowLeftIcon className="h-4 w-4 stroke-zinc-500 transition group-hover:stroke-zinc-700 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400" />
               </button>
-            )}
+            )} */}
             <article>
               <header className="flex flex-col">
                 <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
