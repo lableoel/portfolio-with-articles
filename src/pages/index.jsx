@@ -1,17 +1,15 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
-import {FaGlobe, FaReddit} from "react-icons/fa"
+import { FaGlobe, FaReddit } from 'react-icons/fa'
 
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import {
   TwitterIcon,
-  InstagramIcon,
-  GitHubIcon,
   LinkedInIcon,
-  MastodonIcon,
+  BriefcaseIcon,
 } from '@/components/SocialIcons'
 
 import image from '@/images/tech-images/image.png'
@@ -26,52 +24,8 @@ import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
 import siteMeta, { resume } from '@/data/siteMeta'
 import { NextSeo } from 'next-seo'
+import { SocialLinks } from '@/components/SocialLinks'
 
-function MailIcon(props) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <path
-        d="M2.75 7.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
-        className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
-      />
-      <path
-        d="m4 6 6.024 5.479a2.915 2.915 0 0 0 3.952 0L20 6"
-        className="stroke-zinc-400 dark:stroke-zinc-500"
-      />
-    </svg>
-  )
-}
-
-function BriefcaseIcon(props) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <path
-        d="M2.75 9.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
-        className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
-      />
-      <path
-        d="M3 14.25h6.249c.484 0 .952-.002 1.316.319l.777.682a.996.996 0 0 0 1.316 0l.777-.682c.364-.32.832-.319 1.316-.319H21M8.75 6.5V4.75a2 2 0 0 1 2-2h2.5a2 2 0 0 1 2 2V6.5"
-        className="stroke-zinc-400 dark:stroke-zinc-500"
-      />
-    </svg>
-  )
-}
 
 function ArrowDownIcon(props) {
   return (
@@ -101,14 +55,6 @@ function Article({ article }) {
   )
 }
 
-function SocialLink({ icon: Icon, ...props }) {
-  return (
-    <Link className="group -m-1 p-1" {...props}>
-      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
-    </Link>
-  )
-}
-
 function Resume() {
   return (
     <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
@@ -120,7 +66,13 @@ function Resume() {
         {resume.map((role, roleIndex) => (
           <li key={roleIndex} className="flex gap-4">
             <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image src={role.logo} alt="" fill className="h-7 w-7 rounded-full" unoptimized />
+              <Image
+                src={role.logo}
+                alt=""
+                fill
+                className="h-7 w-7 rounded-full"
+                unoptimized
+              />
             </div>
             <dl className="flex flex-auto flex-wrap gap-x-2">
               <dt className="sr-only">Company</dt>
@@ -139,12 +91,12 @@ function Resume() {
                 }`}
               >
                 <div className="flex items-start justify-start gap-6">
-                  <SocialLink
+                  <SocialLinks
                     href={role.twitter}
                     aria-label="Follow on Twitter"
                     icon={TwitterIcon}
                   />
-                  <SocialLink
+                  <SocialLinks
                     href={role.web}
                     aria-label="Follow on Mastodon"
                     icon={FaGlobe}
@@ -235,21 +187,21 @@ export default function Home({ articles }) {
             see me, say hi).
           </p>
           <p className="prose mt-6 dark:prose-invert">
-            Poke around and see what I’m up to. It’s all open source, so feel
+            Poke around and see what I'm up to. It's all open source, so feel
             free to contribute.
           </p>
           <div className="mt-6 flex gap-6">
-            <SocialLink
+            <SocialLinks
               href={siteMeta.author.twitter}
               aria-label="Follow on Twitter"
               icon={TwitterIcon}
             />
-            <SocialLink
+            <SocialLinks
               href={siteMeta.author.instagram}
               aria-label="Follow on Instagram"
               icon={FaReddit}
             />
-            <SocialLink
+            <SocialLinks
               href={siteMeta.author.linkedin}
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
