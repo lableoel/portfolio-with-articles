@@ -1,0 +1,111 @@
+
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const meta = {
+  author: 'Brian Ketelsen',
+  date: '2020-08-25',
+  title: 'Manage Zoom Client settings with Intune Policies - The best way',
+  description:
+    'Manage ZOOM Client for Meeting application settings via Intune',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+__Quick reminder__; Intune policies allow administrators to manage and secure end-user devices that are used for work purposes. 
+These policies can be used to configure device settings, enforce security requirements, and ensure compliance with company policies.
+Sometimes it is forgotten that such policies can be used to control and mange third-party applications too, as long as the application supports it. 
+Zoom is one of such applications that can be managed via policies. These Intune policies can be targeted to specific user or device groups that are enrolled in Intune. 
+The policies are enforced by the Intune service, which provides ongoing monitoring and enforcement of these policies on managed devices.
+Therefor, I dont recommend embedding custom registry settings on your 'win32' packages or leave such apps unmanaged. What I recommend is to mange it via Intune Policies.
+
+Let's see how to do it.
+
+## Prepare the solution.
+
+### 1. Download the Template Files
+
+Zoom has documented Group Policy configuration settings. Download the latest Policy Template (or the one that fits your need). 
+The content is .zip, so you'll need to extrat it to a temporary or archive repository.
+
+### 2. Import the ADMX and ADML to Intune
+
+If you dont know yet, you can import templates to Intune. As per the time of this article being written, the feature is still in 'preview', but works well and seem to be there to stay.
+
+0. Open Intune Portal
+
+1. Select Devices
+
+2. On the second blade, browse Configuration policies
+
+3. From 'Configuration Policies' main page > select 'import admx'
+
+4. Hit '+Import'
+
+![Devices confoguration profiles Image guide!](https://en.wikipedia.org/wiki/The_Milagro_Beanfield_War_%28novel%29)
+
+5. Select the ADMX and ADML files from the recently extracted .zip file.
+
+> __Note__: You may be asked to import dependent templates first, such as 'windows' if one ADMX requires one. You may find them here: C:\Windows\PolicyDefinitions
+
+## 3. Create the Policy
+
+0. Open Intune Portal
+
+1. Select Devices
+
+2. On the second blade, browse Configuration policies
+
+3. From '' main page > hit '+ Create Profile'
+
+4. Select 'Windows 10 or later' > Administrative template
+
+5. Find and select '__Imported Administrative Template (preview)__' > Create
+
+6. Give it a name and add a description > next
+
+7. From the list, select the uploaded template __(zoom meetings)__
+
+8. Configure the desired settings __(see recommendations below)__ > Next
+
+9. Next and Create.
+
+## Test the solution
+
+0. Install zoom on two different device
+
+1. Assign the policy created above to only one of the machine
+
+2. Notice the difference
+
+![Zoom cloud meeting Image guide!](https://en.wikipedia.org/wiki/The_Milagro_Beanfield_War_%28novel%29)
+
+> __Note__: the above only showing a few parameters of the settings I use. See 'Conclusion' below for some recommended settings.
+
+## Conlusion
+
+The solution works very well and is easy to manage. Always think of 'Operations' when implementing a solution. Make it easy for enough for Ops team so they spend as less 
+time as possible on managing apps settings. Here below some settings I recommend for Zoom:
+
+Disable keep signed in if signing in via Facebook -> __Enabled__
+
+Auto start client after reboot -> __Disabled__
+
+Disable keep signed in if signing in via Google -> __Enabled__
+
+Auto start client after reboot in system tray -> __Disabled__
+
+Set the specified update channel when auto-update feature is enabled -> __Enabled__
+
+Set to enable the manual 'Check for Updates' option -> __Enabled__
+
+Set to enable the auto-update feature -> __Enabled__
+
+Set to show a toast indicating that an update has been successfully applied -> __Enabled__
+
+Set to enable login via Apple OAuth -> __Disabled__
+
+Set to prompt the user to update when exiting a meeting or webinar if an update is available -> __Enabled__
+
+Good luck !
+
+Leo
