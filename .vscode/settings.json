@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/5074ce0a-f75d-4bb6-9ea2-f87e6691834c/resourceGroups/WebSitesResourceGroup/providers/Microsoft.Web/sites/LABleoelWebDemo1",
+    "appService.deploySubpath": "."
+}
